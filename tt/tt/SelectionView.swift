@@ -143,17 +143,19 @@ struct SelectionView: View {
                                         .resizable()
                                         .frame(width: 40, height: 40)
                                         .foregroundColor(.white)
-                                        .padding(20)
+                                        .padding(20) // アイコンの余白
                                 }
-                                .frame(width: 81, height: 82)
+                                .frame(width: 81, height: 81) // ボタンサイズ
                                 .background(Color(red: 0.67, green: 0.89, blue: 0.99))
-                                .cornerRadius(500)
+                                .cornerRadius(40.5) // 丸い形状
                                 .shadow(radius: 5)
-                                .padding(.trailing, 16) // 右側の余白
-                                .padding(.bottom, 100) // 下側の余白
                             }
+                            .padding(.trailing, 16) // HStack内での右側余白
+                            .padding(.bottom, 100) // HStack内での下側余白
+                            .contentShape(Circle()) // タップ範囲をボタンの形状に合わせる
                         }
                     }
+
                 }
             }
         }
