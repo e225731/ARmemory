@@ -15,7 +15,8 @@ struct StartView: View {
                 VStack {
                    // NavigationLinkでの遷移
                     NavigationLink(
-                        destination: SelectionView(),
+                        destination: SelectionView()
+                            .navigationBarBackButtonHidden(true), // バックボタン非表示
                         isActive: $navigateToSelectView
                     ) {
                         EmptyView()
