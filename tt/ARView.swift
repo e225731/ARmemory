@@ -15,7 +15,8 @@ struct ARView: View {
     @State private var isNameAlertPresented = false
 
     @EnvironmentObject var store: WorldMapStore
-
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack {
             ARViewContainer(selectedImage: $selectedImage,
@@ -45,14 +46,15 @@ struct ARView: View {
 
                     Spacer()
 
-                    Button(action: { /* Close action */ }) {
+                    
+                    Button(action: { dismiss() }) {
                         Image(systemName: "xmark")
                             .font(.title2)
                             .padding()
                             .background(Color.white.opacity(0.8))
                             .clipShape(Circle())
                     }
-                }
+                }.navigationBarHidden(true) //　Backボタン非表示
                 .padding([.top, .horizontal], 20)  // トップの余白調整
 
                 Spacer()
